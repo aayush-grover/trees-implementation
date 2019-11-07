@@ -45,10 +45,15 @@ class BinarySearchTree2 {
     void inorder()  { 
        inorderRec(root); 
     } 
-		void preorder()
+	void preorder()
 	{
 		preorder(root);
 	}
+	void postorder()
+	{
+		postorder(root);
+	}
+  
   
     void inorderRec(Node root) { 
         if (root != null) {
@@ -56,8 +61,7 @@ class BinarySearchTree2 {
             System.out.println(root.key); 
             inorderRec(root.right); 
         } 
-   }
-     
+    } 
 	void  preorder(Node root)
 	{
 		if(root!=null)
@@ -67,24 +71,33 @@ class BinarySearchTree2 {
 			preorder(root.right);
 		}
 	}
-	
+	void  postorder(Node root)
+	{
+		if(root != null)
+		{
+			postorder(root.left);
+			postorder(root.right);
+			System.out.println(root.key);
+		}
+	}
+  
   
     public static void main(String[] args) { 
         BinarySearchTree2 tree = new BinarySearchTree2(); 
 
-      
-        tree.insert(50); 
-        tree.insert(30); 
-        tree.insert(20); 
-        tree.insert(40); 
-        tree.insert(70); 
-        tree.insert(60); 
-        tree.insert(80); 
-  
-		System.out.println("Inorder");     
-        tree.inorder();
-		System.out.println("Preorder");
-          tree.preorder();
-			  
+   	tree.insert(50);
+       tree.insert(30);
+       tree.insert(20);
+       tree.insert(40);
+       tree.insert(70);
+       tree.insert(60);    
+       tree.insert(80); 
+       System.out.println("inorder :");
+ tree.inorder();
+          
+		  System.out.println("preorder :");
+         tree.preorder();
+		 	  System.out.println("postorder :");
+          tree.postorder();		  
     } 
 } 
