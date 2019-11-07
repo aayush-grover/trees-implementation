@@ -1,3 +1,4 @@
+import java.util.*;
 class BinarySearchTree2 { 
   
   
@@ -85,13 +86,13 @@ class BinarySearchTree2 {
     public static void main(String[] args) { 
         BinarySearchTree2 tree = new BinarySearchTree2(); 
 
-   	tree.insert(50);
-       tree.insert(30);
-       tree.insert(20);
-       tree.insert(40);
-       tree.insert(70);
-       tree.insert(60);    
-       tree.insert(80); 
+   	
+     Scanner sc=new Scanner(System.in);
+     int n=sc.nextInt();
+     for(int i=0;i<n;i++)
+     {
+         	tree.insert(sc.nextInt());
+     } 
        System.out.println("inorder :");
  tree.inorder();
           
